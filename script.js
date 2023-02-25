@@ -132,15 +132,15 @@ function setDel(id, el) {
 }
 function createCard(obj) {
     return `
-        <div class="cat" data-id="${obj.id}">
+        <div class="cat" data-id="${obj.id}" >
             <i class="${obj.favorite ? "fa-solid" : "fa-regular"} fa-heart cat-like" onclick="setLike(${obj.id},this)"></i>
-            <div class="cat-pic" style="background-image: url('${obj.image || "images/default.png"}')"></div>
+            <div class="cat-pic" style="background-image: url('${obj.image || "images/default.png"}')" onclick="showModal(${obj.id}, this)" data-action="show"></div>
             <h2 class="cat-name">${obj.name}</h2>
             <div class="cat-rate">
                 ${setRate(obj.rate || 0)}
             </div>
             <div class="cat-info">
-                <button class="btn-text" onclick="showModal(${obj.id}, this)" data-action="show">Посмотреть</button>
+                <button class="btn-text" onclick="showModal(${obj.id}, this)" data-action="show">Открыть</button>
                 <button class="btn">
                     <i class="fa-solid fa-pen" onclick="setUpd(${obj.id}, this)" data-action="upd"></i>
                 </button>

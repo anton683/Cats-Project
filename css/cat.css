@@ -16,13 +16,12 @@
     text-align: center;
     background-color: #f5f5f5;
     box-shadow: 0 0 5px 0 #0006;
-
+    transition: .5s ease;
 }
 
 .cat:hover {
     background-color: #fff;
-    transform: scale(1.05, 1.05);
-    transition: 400ms linear;
+    transform: scale(1.06);
     box-shadow: 0 0 5px 0 rgba(252, 77, 208, 0.742), 0 0 5px 0 rgba(252, 77, 208, 0.767);
 }
 
