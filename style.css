@@ -1,0 +1,91 @@
+@import "css/modal.css";
+@import "css/form.css";
+@import "css/cat.css";
+body {
+    margin: 0;
+    font-family: sans-serif;
+    display: grid;
+    min-height: 100vh;
+    grid-template-rows: auto 1fr auto;
+    background-color: #ececec;
+
+}
+h2 {
+    margin: 0;
+}
+.container {
+    padding: 20px;
+}
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* background-color: dodgerblue; */
+    background: radial-gradient(circle, rgba(255,0,202,0.45702030812324934) 46%, rgba(0,82,255,0.47174447174447176) 100%);
+    color: #000000;
+}
+.logo {
+    font-weight: 900;
+    font-size: 2rem;
+    user-select: none;
+}
+.container .btn {
+    border: 1px solid;
+    outline: none;
+    height: 30px;
+    width: 30px;
+    border-radius: 50px;
+    cursor: pointer;
+    font: inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container .btn:hover {
+    background-color: rgb(255, 158, 242);
+}
+
+footer {
+    background-color: #222;
+    color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.author {
+    color: lightcoral;
+}
+.btn-text {
+    border: none;
+    outline: none;
+    padding: 6px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font: inherit;
+    color: #fff;
+    background-color: rgba(30, 144, 255, 0.70);
+}
+.btn-text:hover {
+    background-color: dodgerblue;
+}
+
+
+
+@media (min-width: 1040px) {
+    .container {
+        padding: 20px calc(50% - 500px)
+    }
+}
+nav {
+    display: flex;
+    gap: 18px;
+    align-items: center;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+    border-bottom: 1px solid transparent;
+}
+a:hover {
+    border-bottom-color: dodgerblue;
+}
