@@ -1,0 +1,84 @@
+form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr) auto;
+    gap: 18px;
+}
+.form-line {
+    display: grid;
+    gap: 6px;
+}
+/*.form-row {*/
+/*    grid-template-columns: repeat(2, auto);*/
+/*    gap: 0;*/
+/*    align-items: flex-start;*/
+/*}*/
+.form-span-2 {
+    grid-column-end: span 2;
+}
+.form-span-3 {
+    grid-column-end: span 3;
+}
+input,
+textarea {
+    outline: none;
+    border: 1px solid dodgerblue;
+    padding: 6px 8px;
+    border-radius: 6px;
+    box-sizing: border-box;
+    width: 100%;
+    font: inherit;
+}
+input:focus, textarea:focus {
+    border-color: crimson;
+}
+textarea {
+    resize: vertical;
+}
+label {
+    cursor: pointer;
+    user-select: none;
+}
+[type="checkbox"] {
+    visibility: hidden;
+}
+[type="checkbox"] + label {
+    position: relative;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+[disabled] {
+    background-color: rgba(30, 144, 255, 0.3);
+}
+[type="checkbox"] + label:before {
+    font-family: "Font Awesome 6 Free";
+    content: "\f004";
+    display: flex;
+    width: 24px;
+    height: 24px;
+    border-radius: 6px;
+    border: 1px solid dodgerblue;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    top: -30px;
+}
+[type="checkbox"]:checked + label:before {
+    color: crimson;
+    font-weight: 900;
+}
+form .btn {
+    grid-column-start: 3;
+    background-color: dodgerblue;
+    border: none;
+    outline: none;
+    color: #fff;
+    height: 30px;
+    border-radius: 6px;
+    cursor: pointer;
+    font: inherit;
+    padding: 0 12px;
+}
+form .btn:hover {
+    background-color: crimson;
+}

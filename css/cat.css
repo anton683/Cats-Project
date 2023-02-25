@@ -1,0 +1,69 @@
+.cats-container {
+    display: grid;
+    gap: 18px;
+    align-content: flex-start;
+    align-items: stretch;
+    
+}
+
+.cat {
+    border: 2px solid silver;
+    display: grid;
+    gap: 12px;
+    padding: 18px;
+    border-radius: 6px;
+    position: relative;
+    text-align: center;
+    background-color: #f5f5f5;
+}
+.cat-pic {
+    height: 120px;
+    border-radius: 6px;
+    background-position: center;
+    background-size: cover;
+    
+}
+.cat-like {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    cursor: pointer;
+    font-size: 1.4rem;
+    color: rgb(252, 77, 208);
+}
+.cat-rate {
+    color: silver;
+}
+.cat-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.cat-info .btn {
+    background-color: rgba(30, 144, 255, 0.5);
+    color: #fff;
+    border: none;
+
+}
+.cat-info .fa-solid {
+    font-size: .8rem;
+}
+.cat-info .btn:hover {
+    background-color: dodgerblue;
+}
+
+@media (min-width: 350px) and (max-width: 699px) {
+    .cats-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media (min-width: 700px) and (max-width: 1039px) {
+    .cats-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+@media (min-width: 1040px) {
+    .cats-container {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
