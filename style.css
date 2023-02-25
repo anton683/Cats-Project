@@ -7,7 +7,7 @@ body {
     display: grid;
     min-height: 100vh;
     grid-template-rows: auto 1fr auto;
-    background-color: #ececec;
+    background-color: #e5e5e5;
 
 }
 h2 {
@@ -30,16 +30,17 @@ header {
     user-select: none;
 }
 .container .btn {
-    border: 1px solid;
+    border: 2px solid;
     outline: none;
-    height: 30px;
-    width: 30px;
-    border-radius: 50px;
+    height: 36px;
+    width: 36px;
+    border-radius: 11px;
     cursor: pointer;
     font: inherit;
     display: flex;
     justify-content: center;
     align-items: center;
+    
 }
 .container .btn:hover {
     background-color: rgb(255, 158, 242);
