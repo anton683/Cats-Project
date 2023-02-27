@@ -3,10 +3,11 @@ let actions = document.querySelectorAll("[data-action]");
 let container = document.querySelector(".cats-container");
 let addForm = document.forms.add;
 let updForm = document.forms.upd;
-let author = "anton683";
+const author = "anton683";
 
 let cats = localStorage.getItem("anton-cats");
 cats = cats ? JSON.parse(cats) : [];
+
 actions.forEach(btn => {
     btn.addEventListener("click", () => {
         if (btn.dataset.action === "reload") {
@@ -29,14 +30,31 @@ actions.forEach(btn => {
         }
     })
 })
-modals.forEach(m => {
-    let close = m.querySelector(".modal-close");
-    close.addEventListener("click", () => {
-        m.classList.remove("active");
-        addForm.reset();
-        updForm.reset();
+// ---------- close modal window ------------------
+modals.forEach(openedModal => {
+    function closeModal() {
+      openedModal.classList.remove("active");
+      addForm.reset();          
+      updForm.reset();                    
+    }        
+            let closeOnBtn = openedModal.querySelector(".modal-close");
+            closeOnBtn.addEventListener("click", () => {
+                closeModal()
+            })
+            window.addEventListener("mousedown", (e) => {
+                if (e.target === openedModal) {
+                  closeModal();
+                }
+            })
+            window.addEventListener("keydown", (e) => {
+                if (e.keyCode === 27) {
+                  closeModal();
+                }
+            })
     })
-})
+// -----------------------------------------
+
+
 function setLike(id, el) {
     console.log(id);
     el.classList.toggle("fa-solid");
@@ -62,6 +80,7 @@ function setLike(id, el) {
             }
         })
 }
+
 function setRate(n) {
     let html = "";
     for (let i = 0; i < n ; i++) {
@@ -72,6 +91,7 @@ function setRate(n) {
     }
     return html;
 }
+
 function setAge(n) {
     if (n % 100 < 11 || n % 100 > 14) {
         if (n % 10 === 1) {
@@ -83,6 +103,7 @@ function setAge(n) {
     }
     return n + " лет";
 }
+
 function showModal(id, el) {
     let m = Array.from(modals).find(m => m.dataset.type === el.dataset.action);
     m.classList.add("active");
@@ -91,13 +112,14 @@ function showModal(id, el) {
     content.innerHTML = `
         <div class="cat-text">
             <h2>${cat.name}</h2>
-            <div>${setAge(cat.age)}</div>
+            <div>${ cat.age > 0 ? setAge(cat.age) : "Возраст не указан"}</div>
             <div>${cat.description || "Информации о котике пока нет..."}</div>
         </div>
         <img src=${cat.image || "images/default.png"} alt="${cat.name}">
     `
     // <div>${typeof cat.age === "number" ? setAge(cat.age) : "Возраст не указан"}</div>
 }
+
 function setUpd(id, el) {
     Array.from(modals).find(m => m.dataset.type === el.dataset.action).classList.add("active");
     let cat = cats.find(cat => cat.id === id);
@@ -113,6 +135,7 @@ function setUpd(id, el) {
         }
     }
 }
+
 function setDel(id, el) {
     let card = el.parentElement.parentElement;
     fetch(`https://cats.petiteweb.dev/api/single/${author}/delete/${id}`, {
@@ -130,6 +153,7 @@ function setDel(id, el) {
             }
         })
 }
+
 function createCard(obj) {
     return `
         <div class="cat" data-id="${obj.id}" >
@@ -140,9 +164,10 @@ function createCard(obj) {
                 ${setRate(obj.rate || 0)}
             </div>
             <div class="cat-info">
-                <button class="btn-text" onclick="showModal(${obj.id}, this)" data-action="show">Открыть</button>
-                <button class="btn">
-                    <i class="fa-solid fa-pen" onclick="setUpd(${obj.id}, this)" data-action="upd"></i>
+                <button class="btn" onclick="showModal(${obj.id}, this)" data-action="show">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                <button class="btn" onclick="setUpd(${obj.id}, this)" data-action="upd">
+                    <i class="fa-solid fa-pen"></i>
                 </button>
                 <button class="btn" onclick="setDel(${obj.id}, this)">
                     <i class="fa-solid fa-trash"></i>

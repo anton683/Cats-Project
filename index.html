@@ -1,22 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <title>SweetCats</title>
+    <title>Catsbook</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="style.css">
     <meta name="viewport" content="width=device-width">
 </head>
+
 <body>
     <header class="container">
         <div class="logo">
-          <img src="images/happy2.png" alt="cat" height="38px">
-          <!-- <i class="fa-solid fa-paw"></i> -->
+          <img src="images/happyCat.png" alt="cat" height="38px">
             Catsbook
-            <!-- <i class="fa-solid fa-cat"></i> -->
         </div>
         <nav>
-
             <div class="btn" data-action="reload" title="Загрузить данные с сервера">
                 <i class="fa-solid fa-rotate" ></i>
             </div>
@@ -25,16 +24,17 @@
             </div>
         </nav>
     </header>
+
     <main class="container cats-container"></main>
+
     <footer class="container">
-        <span>©2023</span>
-        <span>Made by
-            <span class="author">Anton</span>
-            with
-            <i class="fa-solid fa-heart"></i>
+            <span>Made by
+            <a class="author" href="https://github.com/anton683" title="anton683 Github.com">Anton</a> © 2023
         </span>
     </footer>
-<!--    <button data-action="upd">-</button>-->
+
+<!------------- <button data-action = "add"> --------------->
+
     <div class="modal" data-type="add">
         <div class="modal-container">
             <div class="modal-close">
@@ -48,7 +48,7 @@
                 </div>
                 <div class="form-line form-span-2">
                     <label for="add2">Имя</label>
-                    <input type="text" id="add2" name="name" required placeholder="Леопольд">
+                    <input type="text" id="add2" name="name" required placeholder="Имя котика">
                 </div>
                 <div class="form-line form-span-3">
                     <label for="add3">Изображение</label>
@@ -74,6 +74,9 @@
             </form>
         </div>
     </div>
+
+    <!------------- <button data-action = "upd"> --------------->
+
     <div class="modal" data-type="upd">
         <div class="modal-container">
             <div class="modal-close">
@@ -87,7 +90,7 @@
                 </div>
                 <div class="form-line form-span-2">
                     <label for="upd2">Имя</label>
-                    <input type="text" id="upd2" name="name" required placeholder="Леопольд">
+                    <input type="text" id="upd2" name="name" required placeholder="Имя котика">
                 </div>
                 <div class="form-line form-span-3">
                     <label for="upd3">Изображение</label>
@@ -113,45 +116,7 @@
             </form>
         </div>
     </div>
-    <div class="modal" data-type="add">
-        <div class="modal-container">
-            <div class="modal-close">
-                <i class="fa-solid fa-xmark"></i>
-            </div>
-            <h2>Добавить котика</h2>
-            <form id="add">
-                <div class="form-line">
-                    <label for="add1">ID</label>
-                    <input type="number" id="add1" name="id" required placeholder="1" min="1">
-                </div>
-                <div class="form-line form-span-2">
-                    <label for="add2">Имя</label>
-                    <input type="text" id="add2" name="name" required placeholder="Леопольд">
-                </div>
-                <div class="form-line form-span-3">
-                    <label for="add3">Изображение</label>
-                    <input type="url" id="add3" name="image" placeholder="Ссылка на изображение">
-                </div>
-                <div class="form-line">
-                    <label for="add4">Возраст</label>
-                    <input type="number" id="add4" name="age" placeholder="4" min="0" max="100">
-                </div>
-                <div class="form-line">
-                    <label for="add5">Рейтинг</label>
-                    <input type="number" id="add5" name="rate" min="0" max="5" placeholder="5">
-                </div>
-                <div class="form-line form-row">
-                    <input type="checkbox" id="add6" name="favorite">
-                    <label for="add6">Любимчик</label>
-                </div>
-                <div class="form-line form-span-3">
-                    <label for="add7">Описание</label>
-                    <textarea type="text" id="add7" name="description" placeholder="Напишите что-нибудь про своего питомца" rows="3"></textarea>
-                </div>
-                <button class="btn" type="submit">Добавить</button>
-            </form>
-        </div>
-    </div>
+
     <div class="modal" data-type="show">
         <div class="modal-container modal-width">
             <div class="modal-close">
@@ -161,6 +126,8 @@
             </div>
         </div>
     </div>
+
     <script src="script.js"></script>
+
 </body>
 </html>

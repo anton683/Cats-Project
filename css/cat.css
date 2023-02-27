@@ -23,13 +23,20 @@
     background-color: #fff;
     transform: scale(1.06);
     box-shadow: 0 0 5px 0 rgba(252, 77, 208, 0.742), 0 0 5px 0 rgba(252, 77, 208, 0.767);
+
 }
+
+.cat:hover .btn { 
+    transform: scale(1.1);
+    /* transform: rotate(1turn); */
+} 
 
 .cat-pic {
     height: 140px;
     border-radius: 10px;
     background-position: center;
     background-size: cover;
+    cursor: pointer;
     box-shadow: 0 0 5px 0 #0006;    
 }
 
@@ -45,21 +52,20 @@
     color: rgba(252, 77, 208, 0.713);
 }
 .cat-info {
-    display: flex;
+    display: flex; 
     justify-content: space-between;
     align-items: center;
+    display: grid;
+    grid-template-columns: 3fr 1fr 1fr;
 }
 .cat-info .btn {
-    background-color: rgba(229, 229, 229, 0.5);
-    color: #5a68ffc5;
-    border: none;
-
+    background-color: rgb(230, 230, 230);
+    color: rgb(123, 114, 255);
+    border: 3px solid white;
+    transition: .5s ease;
 }
 .cat-info .fa-solid {
     font-size: .8rem;
-}
-.cat-info .btn:hover {
-    background-color: dodgerblue;
 }
 
 @media (min-width: 350px) and (max-width: 699px) {

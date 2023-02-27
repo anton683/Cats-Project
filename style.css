@@ -7,7 +7,7 @@ body {
     display: grid;
     min-height: 100vh;
     grid-template-rows: auto 1fr auto;
-    background-color: #e5e5e5;
+    background-color: rgb(230, 230, 230);
 
 }
 h2 {
@@ -24,39 +24,41 @@ header {
     background: radial-gradient(circle, rgba(255,0,202,0.45702030812324934) 46%, rgba(0,82,255,0.47174447174447176) 100%);
     color: #000000;
 }
+header .btn {
+    border: 2px solid rgb(255, 200, 248);
+
+}
 .logo {
     font-weight: 600;
     font-size: 2rem;
     user-select: none;
 }
 .container .btn {
-    border: 2px solid;
     outline: none;
     height: 36px;
     width: 36px;
-    border-radius: 11px;
+    border-radius: 10px;
     cursor: pointer;
     font: inherit;
     display: flex;
     justify-content: center;
     align-items: center;
-    
 }
 .container .btn:hover {
-    background-color: rgb(255, 158, 242);
+    background-color: rgb(255, 200, 248);
 }
 
 footer {
     background-color: #222;
     color: #ffffff;
     display: flex;
-    justify-content: space-between;
+    justify-content: end;
     align-items: center;
 }
 .author {
-    color: lightcoral;
+    color: rgb(255, 183, 150);
 }
-.btn-text {
+/* .btn-text {
     border: none;
     outline: none;
     padding: 6px 12px;
@@ -68,7 +70,7 @@ footer {
 }
 .btn-text:hover {
     background-color: dodgerblue;
-}
+} */
 
 
 
